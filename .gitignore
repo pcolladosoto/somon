@@ -1,0 +1,9 @@
+# Ignore hidden files except the .gitignore
+.*
+!.gitignore
+
+# Ignore ZIP files
+*.zip
+
+# Ignore generated binaries
+bootstrap
