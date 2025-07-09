@@ -1,0 +1,17 @@
+{
+    "payload": {
+        "encoding": "base64",
+        "type": "STRING",
+        "value": "eyJJTUVJIjoiMDAwMDAwMDAwMDAwMDAwIiwiSU1TSSI6IjAwMDAwMDAwMDAwMDAwMCIsIk1vZGVsIjoiU0UwWC1OQiIsImludGVycnVwdCI6MCwiaW50ZXJydXB0X2xldmVsIjowLCJiYXR0ZXJ5IjozLjYzLCJzaWduYWwiOjE5LCJzZW5zb3JfZmxhZyI6IjEwMDAiLCJ3YXRlcl9zb2lsMSI6MjAuNzksInRlbXBfc29pbDEiOjIzLjk5LCJjb25kdWN0X3NvaWwxIjo0MzgsInRpbWUiOiIyMDI1LzA3LzA3IDEyOjAyOjQwIn0="
+    },
+    "received": "1751889768425",
+    "id": "0-000000000000000000000000000000000",
+    "source": "UDP",
+    "type": "TELEMETRY_DATA",
+    "version": "1.0.0",
+    "device": {
+        "iccid": "0000000000000000000",
+        "ip": "0.0.0.0",
+        "imsi": "000000000000000"
+    }
+}

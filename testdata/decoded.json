@@ -1,0 +1,14 @@
+{
+    "IMEI": "000000000000000",
+    "IMSI": "000000000000000",
+    "Model": "SE0X-NB",
+    "interrupt": 0,
+    "interrupt_level": 0,
+    "battery": 3.63,
+    "signal": 19,
+    "sensor_flag": "1000",
+    "water_soil1": 20.79,
+    "temp_soil1": 23.99,
+    "conduct_soil1": 438,
+    "time": "2025/07/07 12:02:40"
+}
