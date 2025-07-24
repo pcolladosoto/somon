@@ -12,9 +12,13 @@ Put simply, this project:
 ## Deployed Sensors
 We have currently deployed the following sensors:
 
-| **Serial Number** | **UART Interface's Password** |
-| :---------------: | :---------------------------: |
-|        XYZ        |            `307e11`           |
+| **Serial Number** | **UART Interface's Password** |      **ICCID**      |
+| :---------------: | :---------------------------: | :-----------------: |
+|        XYZ        |            `307e11`           | 8988228066603107708 |
+|  BC660GL25241383  |            `348411`           | 8988228066603107712 |
+|  BC660GL25241385  |            `347811`           | 8988228066603107713 |
+|  BC660GL25241386  |            `347612`           | 8988228066603107716 |
+
 
 ## Sensor Configuration
 Sensors are configured over an UART through `picocom(1)`. Once can access their shell with
@@ -32,16 +36,32 @@ to:
     AT+PRO=2,5
 
     # Point to 1nce's UDP broker
-    AT+SERVADDR=udp.os.1nce.com,4445
+    AT+SERVADDR=udp.os.1nce.com,4445 / 81.45.14.171,5005
 
     # Configure 1nce's APN
-    AT+APN=iot.1nce.net
+    AT+APN=iot.1nce.net / iotdataready.movistar.es
 
 One can find more information on how to configure this particular device on [the product's wiki][doc-main].
 Specific sites exist for [setting up the UART connection][doc-uart] and for configuring an
 [upstream connection][doc-upstream].
 
 1nce also provides a wealth of information, including [how to configure its APN][doc-apn].
+
+### Flashing the FW
+One can flash new firmware versions to the devices in order to add new features or fix outstanding errors. The
+information on how to do that can be found [here][dragino-uart]. The bottom line is one has to pull the
+appropriate firmware and flash it with the [STM32 Cube Programmer][stm32-programmer].
+
+The firmware's flashed on an address specified by the user. The documentation is not clear about what these should
+be, so bear in mind that:
+
+- When flashing the **bootloader** the starting address should be `0x8000000`.
+- When flashing the **firmware** the starting address should be `0x8007800`.
+
+If anything's flashed in the bootloader's address space, the bootloader should be reflashed before attempting
+to flash the firmware itself.
+
+The applicable bootlader and firmware for our SE0Xs are located on the `firmware/` directory.
 
 ## Deploying the Lambda
 Every action one can take regarding the contents of this repository in terms of deployment has been automated
@@ -61,3 +81,4 @@ by means of a `Makefile`. You can just invoke `make(1)` and go on from there!
 [tsdb-write-data]: https://docs.tigerdata.com/use-timescale/latest/write-data/insert/
 [doc-go-pq]: https://pkg.go.dev/github.com/lib/pq
 [doc-go-sql]: https://pkg.go.dev/database/sql
+[stm32-programmer]: https://www.st.com/en/development-tools/stm32cubeprog.html
