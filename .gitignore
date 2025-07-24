@@ -7,3 +7,7 @@
 
 # Ignore generated binaries
 bootstrap
+
+# Ignore backups and firmware for now
+backups/
+firmware/
