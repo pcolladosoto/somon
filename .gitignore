@@ -11,3 +11,10 @@ bootstrap
 # Ignore backups and firmware for now
 backups/
 firmware/
+
+# Ignore data
+*.csv
+*.xlsx
+
+# Ignore Python environments
+env/
